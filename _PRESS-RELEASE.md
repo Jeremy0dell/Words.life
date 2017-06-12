@@ -17,28 +17,36 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  > words.life
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  Write journals and track your progress!
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Gives the users a platform to write journal entries that they can keep private or can release to the public.
+  Possible features: Editing other's documents when allowed, CAPTCHA, sentiment analysis, editing journals and keeping track of those edits.
 
 ## Problem ##
   > Describe the problem your product solves.
+  At the very least it would be nice to have a journal app that allows for git-like commits.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  A history tab attached to all journal entries
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
+  Everything is better if you add some game-like features. PATENT PENDING
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  Just click new entry and get started with your new jounral-writing habit!
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
+  Habits are hard to start. Journaling is a good habit. What else do I need to say?
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.

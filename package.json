@@ -1,0 +1,21 @@
+{
+  "name": "words.life",
+  "version": "1.0.0",
+  "description": "journal app",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Jeremy Odell",
+  "license": "UNLICENCED",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.28",
+    "mongoose": "^4.0.0",
+    "nodemon": "~1.11.0"
+  },
+  "devDependencies": {
+    "request": "^2.72.0",
+    "should": "^9.0.2"
+  }
+}
