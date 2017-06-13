@@ -10,23 +10,38 @@ module.exports.createUser = function(user, pass) {
 module.exports.createEntry = function(title, text, username) {
   // console.log(Entry);
   var newEntry = new Entry({title: title, text:text, author: username});
-  newEntry.save();
-  console.log(newEntry);
+  // newEntry.save();
   return newEntry;
 };
 
 module.exports.addToUser = function(user, entry) {
   var that = this;
+
+
   User.findOne({ 'username': user }, function (err, user) {
     if (err) throw err;
   }).updateOne({
     "$push": { "entries": that.createEntry(entry.title, entry.text, user.username) }
+  }).exec(function(err, user) {
+    entry.save();
   })
 
-  User.find({}, function(err, data) {
-    console.log(data);
+  User.update({ 'username': user }, { $inc: { score: 1 }}, function(err, data) {
+    // console.log('this is a try', data)
+  });
+  console.log("entry is: ", entry);
+  // User.findOne({ 'username': user }, function (err, user) {
+  //   console.log('lllp', user);
+  //   if (err) throw err;
+  // }).updateOne({
+  //   "$inc": { "score": 1}
+  // })
+
+  User.find({}, 'username score', function(err, data) {
+    console.log(data.toString());
   })
 };
+
 
 
 module.exports.showCollection = function() {
@@ -47,6 +62,8 @@ module.exports.showUserEntries = function(user) {
   User.findOne({ 'username': user }, function (err, person) {
     if (err) throw err;
   }).exec(function(err, data) {
-    console.log(data.entries);
-  })
+    (data.entries).forEach(function(chunk) {
+      console.log('\nTitle: ', chunk.title, '\nText: ', chunk.text);
+    });
+  });
 };

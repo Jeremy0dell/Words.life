@@ -4,9 +4,19 @@
   <title>Journal App</title>
   <style type="text/css" href="./styles/styles.css"></style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
   <h1>This is words</h1>
+
+  <div id="entries">
+    <h1>It will go here!</h1>
+    <!-- <button id="toggle" formaction="/toggle" formmethod="get">Click to toggle the button and then the button will toggle!</button> -->
+    <form action="/toggle" method="GET">
+      <input type="submit" value="Submit">
+    </form>
+
+  </div>
 
   <div id="write">
     <form action="/entry" method="POST">
@@ -19,6 +29,7 @@
       <input type="submit" value="Submit">
     </form> 
   </div>
+  
 
   <div id="user">
     <form action="/auth" method="POST">
@@ -33,16 +44,18 @@
     </form>
   </div>
 
-  <div id="entries">
-    <h1>It will go here!</h1>
-  </div>
-
   <script type="text/javascript">
+      $(function(){
+        app.init()
+      });
+
+      
     $("#entries").css({
       float: 'right',
       position: 'relative',
       top: '-15px'
     });
+
   </script>
 </body>
 </html>

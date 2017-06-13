@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-console.log('called');
 // mongoose.createConnection('mongodb://localhost/test');
 
 // var db = mongoose.connection;
@@ -13,7 +12,7 @@ var userSchema = new mongoose.Schema({
   username: {type: String, index: {unique: true}}, // make required
   password: {type: String}, // make required
   entries: [],
-  score: Number
+  score: { type: Number, default: 1 }
 });
 
 
