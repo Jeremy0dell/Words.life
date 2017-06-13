@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Journal App</title>
+  <style type="text/css" href="./styles/styles.css"></style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <h1>This is words</h1>
+
+  <div id="write">
+    <form action="/entry" method="POST">
+      Title your journal!<br>
+      <input type="text" name="title">
+      <br>
+      Write your journal!<br>
+      <textarea type="text" name="entry" rows="10" cols="50"></textarea>
+      <br><br>
+      <input type="submit" value="Submit">
+    </form> 
+  </div>
+
+  <div id="user">
+    <form action="/auth" method="POST">
+      <label><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+          
+      <button type="submit">Login</button>
+      <input type="checkbox" checked="checked"> Remember me
+    </form>
+  </div>
+
+  <div id="entries">
+    <h1>It will go here!</h1>
+  </div>
+
+  <script type="text/javascript">
+    $("#entries").css({
+      float: 'right',
+      position: 'relative',
+      top: '-15px'
+    });
+  </script>
+</body>
+</html>
