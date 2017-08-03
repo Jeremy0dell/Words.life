@@ -32,8 +32,9 @@ app.get('/', function (req, res) {
 })
 
 app.get('/toggle', function (req, res) {
-  helpers.showUserEntries(currUser);
-
+  var toSend = helpers.showUserEntries(currUser); // look into responses
+  res.status(200);
+  res.send(toSend);
 });
 
 app.post('/entry', function(req, res) {

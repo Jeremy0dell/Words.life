@@ -16,8 +16,6 @@ module.exports.createEntry = function(title, text, username) {
 
 module.exports.addToUser = function(user, entry) {
   var that = this;
-
-
   User.findOne({ 'username': user }, function (err, user) {
     if (err) throw err;
   }).updateOne({
@@ -65,5 +63,6 @@ module.exports.showUserEntries = function(user) {
     (data.entries).forEach(function(chunk) {
       console.log('\nTitle: ', chunk.title, '\nText: ', chunk.text);
     });
+    return data.entries
   });
 };

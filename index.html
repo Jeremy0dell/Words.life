@@ -11,10 +11,12 @@
 
   <div id="entries">
     <h1>It will go here!</h1>
-    <!-- <button id="toggle" formaction="/toggle" formmethod="get">Click to toggle the button and then the button will toggle!</button> -->
-    <form action="/toggle" method="GET">
-      <input type="submit" value="Submit">
+    <button id="toggle">Click to toggle the button and then the button will toggle!</button>
+    <!-- <form id="formEnt" action="/toggle" method="GET">
+      <input type="submit" value="Make the entries appear here by clicking!">
     </form>
+     -->
+
 
   </div>
 
@@ -45,9 +47,22 @@
   </div>
 
   <script type="text/javascript">
-      $(function(){
-        app.init()
-      });
+      var nameValue = document.getElementById("formEnt").value;
+
+      $("#toggle").click(function() {
+        console.log('hello');
+        $.ajax({
+          url: "http://127.0.0.1:3000/toggle",
+          type: "GET",
+          success: function(data) {
+            alert(data);
+          },
+          error: function(err) {
+            throw err;
+          }
+        });
+      })
+
 
       
     $("#entries").css({
